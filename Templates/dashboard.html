@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+<h2 class="text-center mb-5">
+
+Dashboard
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="card text-center shadow">
+
+<div class="card-body">
+
+<h5>Total Predictions</h5>
+
+<h1>{{ total }}</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card text-center shadow">
+
+<div class="card-body">
+
+<h5>Approved</h5>
+
+<h1 class="text-success">
+
+{{ approved }}
+
+</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card text-center shadow">
+
+<div class="card-body">
+
+<h5>Rejected</h5>
+
+<h1 class="text-danger">
+
+{{ rejected }}
+
+</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card text-center shadow">
+
+<div class="card-body">
+
+<h5>Avg Confidence</h5>
+
+<h1 class="text-primary">
+
+{{ average }}%
+
+</h1>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

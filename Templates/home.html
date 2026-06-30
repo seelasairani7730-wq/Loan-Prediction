@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+{% block title %}LoanWise AI{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <h1 class="display-4 fw-bold">
+
+                    AI Powered <span class="text-primary">Loan Prediction</span>
+
+                </h1>
+
+                <p class="lead text-muted mt-4">
+
+                    Instantly check your loan eligibility using our Deep Learning model.
+                    Fast, secure, and accurate predictions with confidence scores.
+
+                </p>
+
+                <a href="/predict/" class="btn btn-primary btn-lg mt-3 px-4">
+
+                    <i class="bi bi-lightning-charge-fill"></i>
+
+                    Check Eligibility
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png"
+                     class="img-fluid"
+                     width="420">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Features -->
+
+<section class="py-5 bg-white">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Why Choose LoanWise AI?
+
+            </h2>
+
+            <p class="text-muted">
+
+                Smart, Fast and Reliable Loan Eligibility Prediction
+
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <div class="card text-center p-4 h-100">
+
+                    <i class="bi bi-cpu display-4 text-primary"></i>
+
+                    <h4 class="mt-3">
+
+                        AI Model
+
+                    </h4>
+
+                    <p>
+
+                        Powered by an Artificial Neural Network trained using TensorFlow & Keras.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card text-center p-4 h-100">
+
+                    <i class="bi bi-speedometer2 display-4 text-success"></i>
+
+                    <h4 class="mt-3">
+
+                        Instant Results
+
+                    </h4>
+
+                    <p>
+
+                        Receive loan eligibility predictions in just a few seconds.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card text-center p-4 h-100">
+
+                    <i class="bi bi-shield-check display-4 text-warning"></i>
+
+                    <h4 class="mt-3">
+
+                        Secure
+
+                    </h4>
+
+                    <p>
+
+                        Your information is processed securely without unnecessary storage.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card text-center p-4 h-100">
+
+                    <i class="bi bi-bar-chart-line display-4 text-danger"></i>
+
+                    <h4 class="mt-3">
+
+                        Confidence Score
+
+                    </h4>
+
+                    <p>
+
+                        Every prediction includes a confidence percentage for better understanding.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="card bg-primary text-white text-center p-5">
+
+            <h2>
+
+                Ready to Check Your Loan Eligibility?
+
+            </h2>
+
+            <p class="mt-3">
+
+                Complete the application form and receive an AI-powered prediction instantly.
+
+            </p>
+
+            <a href="/predict/" class="btn btn-light btn-lg mt-3">
+
+                Predict Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

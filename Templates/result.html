@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-lg border-0">
+
+                {% if result == "Approved" %}
+
+                <div class="card-header bg-success text-white text-center py-4">
+
+                    <h2>
+                        <i class="bi bi-patch-check-fill"></i>
+                        Loan Approved
+                    </h2>
+
+                    <p class="mb-0">
+                        Congratulations! Your profile has a high chance of loan approval.
+                    </p>
+
+                </div>
+
+                {% else %}
+
+                <div class="card-header bg-danger text-white text-center py-4">
+
+                    <h2>
+                        <i class="bi bi-x-octagon-fill"></i>
+                        Loan Rejected
+                    </h2>
+
+                    <p class="mb-0">
+                        Based on the provided information, the loan is unlikely to be approved.
+                    </p>
+
+                </div>
+
+                {% endif %}
+
+                <div class="card-body p-5">
+
+                    <h4 class="mb-3">
+
+                        Confidence Score
+
+                    </h4>
+
+                    <div class="progress mb-4" style="height:30px;">
+
+                        <div
+                            class="progress-bar progress-bar-striped progress-bar-animated
+                            {% if result == 'Approved' %}
+                            bg-success
+                            {% else %}
+                            bg-danger
+                            {% endif %}"
+
+                            style="width:{{ confidence }}%;">
+
+                            {{ confidence }}%
+
+                        </div>
+
+                    </div>
+
+                    <div class="row text-center mt-5">
+
+                        <div class="col-md-4">
+
+                            <h5>Prediction</h5>
+
+                            {% if result == "Approved" %}
+                            <span class="badge bg-success fs-6">
+                                Approved
+                            </span>
+                            {% else %}
+                            <span class="badge bg-danger fs-6">
+                                Rejected
+                            </span>
+                            {% endif %}
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <h5>Confidence</h5>
+
+                            <span class="fw-bold">
+
+                                {{ confidence }}%
+
+                            </span>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <h5>Risk Level</h5>
+
+                            {% if confidence >= 80 %}
+
+                                <span class="badge bg-success fs-6">
+
+                                    Low Risk
+
+                                </span>
+
+                            {% elif confidence >= 60 %}
+
+                                <span class="badge bg-warning text-dark fs-6">
+
+                                    Medium Risk
+
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-danger fs-6">
+
+                                    High Risk
+
+                                </span>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                    <hr class="my-5">
+
+                    <h4>
+
+                        AI Recommendation
+
+                    </h4>
+
+                    {% if result == "Approved" %}
+
+                    <div class="alert alert-success">
+
+                        ✔ Your financial profile indicates a strong probability of loan approval.
+                        You may proceed with the loan application.
+
+                    </div>
+
+                    {% else %}
+
+                    <div class="alert alert-danger">
+
+                        We recommend improving your financial profile before applying again.
+                        Maintaining a good credit history and balanced income can improve eligibility.
+
+                    </div>
+
+                    {% endif %}
+
+                    <div class="text-center mt-5">
+
+                        <a href="/predict/" class="btn btn-primary btn-lg">
+
+                            <i class="bi bi-arrow-repeat"></i>
+
+                            Predict Again
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
